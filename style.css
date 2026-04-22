@@ -69,7 +69,7 @@ p {
 }
 
 .section-padding {
-    padding: 6rem 0;
+    padding: 10rem 0;
 }
 
 .text-center {
@@ -247,7 +247,7 @@ p {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 0; /* Changed from 80px to cover the space behind transparent header */
+    padding: 6rem 0; /* Adding vertical padding to the hero for more space */
     position: relative;
     overflow: hidden;
     background-color: #274abb; /* Deep royal blue */
@@ -401,9 +401,10 @@ p {
 /* Carrusel Marcas */
 .marcas-section {
     background-color: var(--surface-color);
-    padding: 2rem 0;
+    padding: 4rem 0; /* Increased padding */
     border-bottom: 1px solid rgba(0,0,0,0.05);
     overflow: hidden;
+    margin-bottom: 2rem; /* Added margin to separate from next section */
 }
 
 .ticker-wrap {
@@ -496,7 +497,7 @@ p {
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 6rem; /* Increased gap */
     align-items: center;
 }
 
@@ -633,8 +634,8 @@ p {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
+    gap: 3rem; /* Increased gap */
+    margin-top: 6rem; /* Increased margin top */
 }
 
 .wpo-protfolio-single {
