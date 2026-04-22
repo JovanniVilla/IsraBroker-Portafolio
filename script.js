@@ -83,7 +83,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, revealOptions);
 
-    counters.forEach(counter => {
-        counterObserver.observe(counter);
+    // 5. Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinksList = document.querySelector('.nav-links');
+    const body = document.body;
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinksList.classList.toggle('active');
+        // Prevent scroll when menu is open
+        body.style.overflow = navLinksList.classList.contains('active') ? 'hidden' : 'auto';
+    });
+
+    // Close menu when a link is clicked
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navLinksList.classList.remove('active');
+            body.style.overflow = 'auto';
+        });
     });
 });

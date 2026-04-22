@@ -148,6 +148,59 @@ p {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-blue);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .menu-toggle span {
+    background-color: var(--accent-blue);
+}
+
+/* Hero transparent header state */
+.navbar:not(.scrolled) .menu-toggle span {
+    background-color: #ffffff;
+}
+
+/* Active State Animation - Always show dark color when active on mobile menu */
+.menu-toggle.active span {
+    background-color: var(--accent-blue) !important;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -503,6 +556,8 @@ p {
 
 .about-image-wrapper {
     position: relative;
+    max-width: 420px;
+    margin: 0 auto;
 }
 
 .about-img-main {
@@ -962,27 +1017,33 @@ p {
 
 /* Responsive Design */
 @media (max-width: 992px) {
+    .section-padding {
+        padding: 5rem 0;
+    }
+
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
+        padding-top: 4rem;
     }
     
-    .hero::before {
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.5;
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .hero-content {
-        order: 1;
+    .hero-cta-wrapper {
+        margin-left: 0;
+        justify-content: center;
     }
-    
+
+    .cta-line {
+        display: none;
+    }
+
     .hero-image-wrapper {
-        order: 2;
-        max-width: 500px;
-        margin: 0 auto;
+        max-width: 400px;
+        margin: 2rem auto 0;
     }
 
     .sr-container {
@@ -993,10 +1054,11 @@ p {
 
     .about-grid {
         grid-template-columns: 1fr;
+        gap: 3rem;
     }
     
     .about-experience-badge {
-        right: 20px;
+        right: 0;
         bottom: -20px;
         padding: 1rem 1.5rem;
     }
@@ -1007,8 +1069,46 @@ p {
 }
 
 @media (max-width: 768px) {
-    .nav-links, .nav-cta {
-        display: none;
+    .section-padding {
+        padding: 4rem 0;
+    }
+
+
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: 0.4s ease;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a, .navbar .nav-links a {
+        color: var(--accent-blue) !important;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .menu-toggle {
+        display: flex;
+        z-index: 1100;
+    }
+
+    .nav-cta {
+        display: none; /* Hide WhatsApp button in header on mobile to avoid crowding */
     }
     
     .footer-container {
@@ -1029,11 +1129,27 @@ p {
         justify-content: center;
     }
 
-    h1 {
-        font-size: 2.5rem;
+    .hero-title {
+        font-size: 3rem;
+        line-height: 1;
+        margin-bottom: 2rem;
     }
 
-    .experience-message {
-        font-size: 1.5rem;
+    .hero-title .title-line {
+        padding-left: 0;
+    }
+
+    .hero-image-wrapper, .hero-socials {
+        display: none;
+    }
+
+    .services-grid {
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .sr-visual {
+        width: 150px;
+        height: 150px;
     }
 }
