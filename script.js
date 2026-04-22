@@ -83,6 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, revealOptions);
 
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+
     // 5. Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinksList = document.querySelector('.nav-links');

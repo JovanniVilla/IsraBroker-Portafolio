@@ -380,7 +380,7 @@ p {
 .hero-title {
     display: flex;
     flex-direction: column;
-    font-size: clamp(3rem, 7vw, 6rem);
+    font-size: clamp(8rem, 10vw, 8.5rem);
     line-height: 0.9;
     color: #ffffff;
     margin-bottom: 2rem;
@@ -454,10 +454,10 @@ p {
 /* Carrusel Marcas */
 .marcas-section {
     background-color: var(--surface-color);
-    padding: 4rem 0; /* Increased padding */
+    padding: 2rem 0;
     border-bottom: 1px solid rgba(0,0,0,0.05);
     overflow: hidden;
-    margin-bottom: 2rem; /* Added margin to separate from next section */
+    margin-bottom: 1rem;
 }
 
 .ticker-wrap {
@@ -508,42 +508,95 @@ p {
 
 /* Social Proof */
 .social-proof {
-    padding: 3rem 0;
-    background-color: var(--surface-color);
-    border-top: 1px solid rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    padding: 6rem 0;
+    background-color: #f8faff;
+    position: relative;
 }
 
 .social-proof-title {
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 2rem;
-    color: var(--text-muted);
+    letter-spacing: 3px;
+    margin-bottom: 4rem;
+    color: var(--accent-blue);
+    opacity: 0.7;
 }
 
 .logos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+.logo-card {
+    background: #ffffff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 33, 112, 0.05);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 4rem;
-    flex-wrap: wrap;
+    gap: 1.2rem;
+    box-shadow: 0 10px 30px rgba(0, 33, 112, 0.03);
 }
 
-.logo-item {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    filter: grayscale(100%) opacity(0.5);
+.logo-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 33, 112, 0.08);
+    border-color: var(--accent-gold);
+}
+
+.logo-img-container {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.brand-logo {
+    max-height: 100%;
+    max-width: 140px;
+    filter: grayscale(100%);
     transition: var(--transition-fast);
-    cursor: pointer;
+    opacity: 0.7;
 }
 
-.logo-item:hover {
-    filter: grayscale(0%) opacity(1);
+.logo-card:hover .brand-logo {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.brand-icon {
+    font-size: 3rem;
     color: var(--accent-blue);
-    transform: scale(1.05);
+    opacity: 0.6;
+    transition: var(--transition-fast);
+}
+
+.logo-card:hover .brand-icon {
+    color: var(--accent-gold);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.brand-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 0.2rem;
+}
+
+.brand-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
 }
 
 /* About Section Interactive */
@@ -653,6 +706,7 @@ p {
     padding: 2rem;
     border-radius: 15px;
     border-left: 4px solid var(--accent-gold);
+    border-right: 4px solid var(--accent-gold);
     margin: 2rem 0;
     display: flex;
     gap: 1.5rem;
@@ -952,8 +1006,8 @@ p {
     text-align: center;
     padding: 1rem 0; /* Adding a bit of padding back for better spacing with the link */
     border-top: 1px solid rgba(0,0,0,0.05);
-    background-color: #ffffff;
-    color: var(--text-muted);
+    background-color: #091c50;
+    color: #fff;
 }
 
 .privacy-link {
@@ -1197,12 +1251,20 @@ p {
         right: 0;
         bottom: -20px;
     }
+
+    .logos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
     .hero {
         min-height: calc(100vh - 80px);
         padding: 4rem 0 0;
+    }
+
+    .hide-mobile {
+        display: none !important;
     }
 
     .marcas-section {
@@ -1274,7 +1336,7 @@ p {
     }
 
     .hero-title {
-        font-size: clamp(2.5rem, 12vw, 3.2rem);
+        font-size: clamp(5rem, 15vw, 15rem) !important; 
         line-height: 1.1;
         text-align: center;
         align-items: center;
@@ -1287,6 +1349,11 @@ p {
     .services-grid {
         margin-top: 4rem;
         gap: 2rem;
+    }
+
+    .logos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .sr-visual {
