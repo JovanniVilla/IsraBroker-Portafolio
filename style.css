@@ -360,15 +360,29 @@ p {
 }
 
 .hero-cta-text {
-    color: var(--accent-gold);
+    background-color: var(--accent-gold);
+    color: #ffffff;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     transition: var(--transition-fast);
+    box-shadow: 0 10px 20px rgba(0, 33, 112, 0.15);
 }
 
 .hero-cta-text:hover {
-    color: #fff;
+    background-color: var(--accent-gold-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 33, 112, 0.25);
+    color: #ffffff;
+}
+
+.hero-cta-text i {
+    font-size: 1.4rem;
 }
 
 .hero-image-wrapper {
@@ -478,30 +492,141 @@ p {
     transform: scale(1.05);
 }
 
-/* Experience */
-.experience {
+/* About Section Interactive */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image-wrapper {
     position: relative;
 }
 
-.experience-container {
-    max-width: 800px;
-    text-align: center;
+.about-img-main {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
-.subsection-title {
+.about-img-main img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-img-main:hover img {
+    transform: scale(1.05);
+}
+
+.about-experience-badge {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    background: #ffffff;
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border-bottom: 4px solid var(--accent-gold);
+    animation: float 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.badge-icon {
+    font-size: 2.5rem;
     color: var(--accent-gold);
+}
+
+.about-experience-badge h4 {
+    font-size: 2rem;
+    margin: 0;
+    color: var(--accent-blue);
+    display: inline-block;
+}
+
+.about-experience-badge span {
     font-size: 1.5rem;
-    margin-bottom: 2rem;
+    color: var(--accent-blue);
+    font-weight: bold;
+}
+
+.about-experience-badge p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.section-tag {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(0, 33, 112, 0.05);
+    color: var(--accent-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.about-text .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.experience-desc.lead {
+    font-size: 1.2rem;
+    color: var(--accent-blue);
     font-weight: 500;
 }
 
-.experience-message {
-    font-size: 2rem;
+.highlight-box {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 4px solid var(--accent-gold);
+    margin: 2rem 0;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    transition: var(--transition-fast);
+}
+
+.highlight-box:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transform: translateX(10px);
+}
+
+.highlight-icon {
+    background: rgba(0, 33, 112, 0.05);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
     color: var(--accent-blue);
-    font-weight: 700;
-    line-height: 1.4;
-    margin-bottom: 2rem;
-    font-style: italic;
+    flex-shrink: 0;
+}
+
+.highlight-box p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
 }
 
 /* Services Grid - Anur Portfolio Style */
@@ -640,7 +765,10 @@ p {
 
 /* Social Responsibility */
 .sr-container {
-    background: linear-gradient(135deg, var(--surface-color) 0%, var(--surface-light) 100%);
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.92) 0%, rgba(241, 245, 249, 0.92) 100%), url('Public/FUNDACION-Gatito-LOGO.gif');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 30px;
     padding: 4rem;
     display: flex;
@@ -648,6 +776,8 @@ p {
     justify-content: space-between;
     gap: 4rem;
     border: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
 }
 
 .sr-content {
@@ -764,10 +894,21 @@ p {
 
 .footer-bottom {
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 1rem 0; /* Adding a bit of padding back for better spacing with the link */
     border-top: 1px solid rgba(0,0,0,0.05);
     background-color: #ffffff;
     color: var(--text-muted);
+}
+
+.privacy-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    margin-left: 5px;
+}
+
+.privacy-link:hover {
+    color: var(--accent-gold);
 }
 
 /* Persistent WhatsApp Button */
@@ -783,6 +924,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
     font-size: 30px;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
     z-index: 1000;
@@ -846,6 +988,20 @@ p {
         flex-direction: column;
         text-align: center;
         padding: 3rem 2rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-experience-badge {
+        right: 20px;
+        bottom: -20px;
+        padding: 1rem 1.5rem;
+    }
+    
+    .about-experience-badge h4 {
+        font-size: 1.5rem;
     }
 }
 

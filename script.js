@@ -56,4 +56,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // 4. Counter Animation for Interactive Badges
+    const counters = document.querySelectorAll('.counter');
+    const speed = 100; // The lower the slower
+
+    const counterObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+                observer.unobserve(counter);
+            }
+        });
+    }, revealOptions);
+
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
 });
