@@ -524,11 +524,42 @@ p {
     opacity: 0.7;
 }
 
-.logos-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    align-items: stretch;
+/* Trust Carousel - Continuous Infinite Scroll */
+.trust-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    /* Fade edges */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.carousel-track {
+    display: inline-flex;
+    gap: 2rem;
+    animation: trustScroll 35s linear infinite;
+    will-change: transform;
+    padding: 15px 0;
+}
+
+.trust-carousel:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+.carousel-track .logo-card {
+    width: 340px;
+    min-width: 340px;
+    flex-shrink: 0;
+}
+
+@keyframes trustScroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
 }
 
 .logo-card {
@@ -742,17 +773,20 @@ p {
 /* Services Grid - Anur Portfolio Style */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem; /* Increased gap */
-    margin-top: 6rem; /* Increased margin top */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 5rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .wpo-protfolio-single {
     position: relative;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    height: 450px;
+    height: 340px;
     background: var(--surface-color);
 }
 
@@ -793,9 +827,9 @@ p {
 .wpo-protfolio-text {
     position: absolute;
     left: 0;
-    bottom: -150px; /* Hidden initially, title shows at bottom */
+    bottom: -120px; /* Hidden initially, title shows at bottom */
     width: 100%;
-    padding: 2.5rem 2rem;
+    padding: 1.8rem 1.5rem;
     z-index: 2;
     transition: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     text-align: center;
@@ -807,16 +841,16 @@ p {
 }
 
 .wpo-protfolio-text h3 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: #ffffff;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     transition: 0.5s ease;
 }
 
 .wpo-protfolio-text p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     line-height: 1.5;
     opacity: 0;
     transform: translateY(20px);
@@ -1252,8 +1286,9 @@ p {
         bottom: -20px;
     }
 
-    .logos-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .carousel-track .logo-card {
+        width: 280px;
+        min-width: 280px;
     }
 }
 
@@ -1347,13 +1382,19 @@ p {
     }
 
     .services-grid {
-        margin-top: 4rem;
-        gap: 2rem;
+        grid-template-columns: 1fr;
+        margin-top: 3rem;
+        gap: 1.5rem;
+        max-width: 100%;
     }
 
-    .logos-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .wpo-protfolio-single {
+        height: 300px;
+    }
+
+    .carousel-track .logo-card {
+        width: 260px;
+        min-width: 260px;
     }
 
     .sr-visual {
