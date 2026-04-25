@@ -303,17 +303,20 @@ p {
     padding: 6rem 0; /* Adding vertical padding to the hero for more space */
     position: relative;
     overflow: hidden;
-    background-color: #274abb; /* Deep royal blue */
+    background: linear-gradient(135deg, rgba(11, 17, 32, 0.9) 0%, rgba(39, 74, 187, 0.6) 100%), url('Public/luxury-building.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* Concentric Circles */
 .hero-circles {
     position: absolute;
     top: 50%;
-    right: 15%;
+    right: 10%; /* More towards the person */
     transform: translateY(-50%);
-    width: 800px;
-    height: 800px;
+    width: 900px;
+    height: 900px;
     z-index: 0;
     pointer-events: none;
 }
@@ -327,9 +330,10 @@ p {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.circle-1 { width: 400px; height: 400px; }
-.circle-2 { width: 600px; height: 600px; }
-.circle-3 { width: 800px; height: 800px; }
+.circle-1 { width: 350px; height: 350px; }
+.circle-2 { width: 550px; height: 550px; }
+.circle-3 { width: 750px; height: 750px; }
+.circle-4 { width: 950px; height: 950px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.05); }
 
 /* Vertical Socials */
 .hero-socials {
@@ -368,42 +372,45 @@ p {
 
 .hero-container {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
     align-items: center;
     position: relative;
     z-index: 1;
-    width: 85%;
-    margin-left: 10%;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .hero-title {
     display: flex;
     flex-direction: column;
-    font-size: clamp(8rem, 10vw, 8.5rem);
-    line-height: 0.9;
+    font-size: clamp(5rem, 8vw, 7.5rem); /* Slightly smaller than previous to match reference */
+    line-height: 0.85;
     color: #ffffff;
-    margin-bottom: 2rem;
-    text-transform: capitalize;
+    margin-bottom: 2.5rem;
+    text-transform: none; /* Keep original casing */
+    font-weight: 800;
 }
 
 .title-line-1 { padding-left: 0; }
-.title-line-2 { padding-left: 15%; }
-.title-line-3 { padding-left: 30%; }
+.title-line-2 { padding-left: 50px; }
+.title-line-3 { padding-left: 100px; }
 
 .hero-subtitle {
-    color: rgba(255, 255, 255, 0.8);
-    max-width: 450px;
-    margin-bottom: 2.5rem;
-    margin-left: 30%;
-    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 480px;
+    margin-bottom: 3rem;
+    margin-left: 100px; /* Align with the 3rd line of title */
+    font-size: 1.15rem;
+    font-weight: 300;
 }
 
 .hero-cta-wrapper {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-left: 30%;
+    gap: 1.5rem;
+    margin-left: 100px; /* Align with the 3rd line of title */
 }
 
 .cta-line {
@@ -447,8 +454,9 @@ p {
     width: 100%;
     height: auto;
     display: block;
-    max-height: 80vh;
+    max-height: 70vh; /* Slightly reduced for logo */
     object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
 }
 
 /* Carrusel Marcas */
@@ -649,12 +657,15 @@ p {
     overflow: hidden;
     position: relative;
     box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    height: 480px; /* Set a height to crop the image */
 }
 
 .about-img-main img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
+    object-fit: cover;
+    object-position: top center;
     transition: transform 0.5s ease;
 }
 
@@ -774,9 +785,9 @@ p {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 3.5rem; /* Increased horizontal and vertical spacing */
     margin-top: 5rem;
-    max-width: 1000px;
+    max-width: 1200px; /* Increased to allow elements to spread out more */
     margin-left: auto;
     margin-right: auto;
 }
