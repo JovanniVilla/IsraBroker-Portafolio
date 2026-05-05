@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 entry.target.classList.add('active');
                 // Optional: Stop observing once revealed
-                // observer.unobserve(entry.target);
+                observer.unobserve(entry.target);
             }
         });
     }, revealOptions);
