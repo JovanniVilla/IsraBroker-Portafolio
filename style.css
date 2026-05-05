@@ -101,6 +101,18 @@ p {
     transform: translateY(-3px);
 }
 
+.sr-container .btn-primary:hover {
+    background-color: #a27ab5;
+    transform: translateY(-3px);
+}
+
+.sr-container .btn-secondary:hover {
+    background-color: #a27ab5;
+    border-color: #a27ab5;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
 .btn-glow {
     box-shadow: 0 4px 20px var(--accent-glow);
 }
@@ -307,6 +319,68 @@ p {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+/* Hero Brand Section - Centered Layout */
+.hero-brand-section {
+    justify-content: center;
+}
+
+.hero-brand-section .hero-circles {
+    right: 50%;
+    transform: translate(50%, -50%);
+    opacity: 0.6;
+}
+
+.hero-brand-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.8rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-brand-logo {
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.15));
+}
+
+.hero-brand-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.hero-brand-tagline {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.brand-sep {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 1.2rem;
+}
+
+.hero-brand-desc {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin-top: 2rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    text-align: center;
 }
 
 /* Concentric Circles */
@@ -920,7 +994,7 @@ p {
 
 /* Social Responsibility */
 .sr-container {
-    background: linear-gradient(135deg, rgba(248, 250, 252, 0.92) 0%, rgba(241, 245, 249, 0.92) 100%), url('Public/FUNDACION-Gatito-LOGO.gif');
+    background: linear-gradient(135deg, rgba(252, 249, 254, 0.90) 0%, rgba(245, 240, 250, 0.90) 100%), url('Public/FUNDACION-Gatito-LOGO.gif');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -1438,3 +1512,4 @@ p {
         gap: 1rem;
     }
 }
+
