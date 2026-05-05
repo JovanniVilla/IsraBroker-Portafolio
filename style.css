@@ -559,24 +559,21 @@ p {
 .t-item {
     display: inline-flex;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 4rem; /* Increased for logos */
 }
 
-.t-name {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--accent-blue);
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.t-logo {
+    height: 45px; /* Standardized height */
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
 }
 
-.t-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: var(--accent-gold);
-    border-radius: 50%;
-    margin-left: 4rem;
+.t-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 @keyframes ticker {
