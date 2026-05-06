@@ -985,7 +985,7 @@ p {
 
 /* Social Responsibility */
 .sr-container {
-    background: linear-gradient(135deg, rgba(252, 249, 254, 0.90) 0%, rgba(245, 240, 250, 0.90) 100%), url('Public/FUNDACION-Gatito-LOGO.gif');
+    background: linear-gradient(135deg, rgba(245, 240, 255, 0.97) 0%, rgba(235, 225, 250, 0.95) 100%), url('Public/FUNDACION-Gatito-LOGO.gif');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -995,24 +995,66 @@ p {
     align-items: center;
     justify-content: space-between;
     gap: 4rem;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(162, 122, 181, 0.2); /* Borde lila sutil */
     position: relative;
     overflow: hidden;
+    box-shadow: 0 20px 50px rgba(162, 122, 181, 0.1);
 }
 
 .sr-content {
     flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.sr-desc {
+    font-size: 1.2rem;
+    color: var(--text-main); /* Color oscuro para legibilidad */
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.sr-desc strong {
+    color: var(--accent-blue);
+    font-weight: 700;
+}
+
+.sr-desc a {
+    color: var(--accent-gold);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(0, 33, 112, 0.2);
+    transition: var(--transition-fast);
+}
+
+.sr-desc a:hover {
+    border-bottom-color: var(--accent-gold);
+    background: rgba(0, 33, 112, 0.05);
 }
 
 .sr-badge {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background: rgba(212, 175, 55, 0.15);
-    color: var(--accent-gold);
+    background: rgba(162, 122, 181, 0.2);
+    color: #6a4c93; /* Morado profundo para contraste */
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
+}
+
+.sr-desc a {
+    color: #6a4c93;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(106, 76, 147, 0.3);
+    transition: var(--transition-fast);
+}
+
+.sr-desc a:hover {
+    border-bottom-color: #6a4c93;
+    background: rgba(106, 76, 147, 0.05);
 }
 
 .sr-visual {
