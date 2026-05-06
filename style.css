@@ -554,20 +554,27 @@ p {
     display: inline-flex;
     white-space: nowrap;
     animation: ticker 30s linear infinite;
+    will-change: transform; /* Optimize performance */
+}
+
+.ticker:hover {
+    animation-play-state: paused; /* Pause on hover to prevent jumping */
 }
 
 .t-item {
     display: inline-flex;
     align-items: center;
-    padding: 0 4rem; /* Increased for logos */
+    padding: 0 4rem;
+    flex-shrink: 0; /* Prevent items from shrinking */
 }
 
 .t-logo {
-    height: 45px; /* Standardized height */
+    height: 45px;
     width: auto;
     filter: grayscale(100%);
     opacity: 0.7;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+    backface-visibility: hidden; /* Prevent flickering */
 }
 
 .t-logo:hover {
