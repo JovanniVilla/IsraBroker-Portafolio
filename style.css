@@ -1550,10 +1550,21 @@ p {
         min-width: 260px;
     }
 
+    .sr-container {
+        flex-direction: column-reverse;
+        padding: 2.5rem 1.5rem;
+        gap: 2rem;
+        text-align: center;
+    }
+
     .sr-visual {
-        width: 140px;
-        height: 140px;
-        margin-top: 2rem;
+        width: 180px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .sr-content {
+        width: 100%;
     }
 
     .about-image-wrapper {
