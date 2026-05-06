@@ -1487,12 +1487,62 @@ p {
     .services-grid {
         grid-template-columns: 1fr;
         margin-top: 3rem;
-        gap: 1.5rem;
+        gap: 2.5rem; /* Increased gap for clarity */
         max-width: 100%;
     }
 
     .wpo-protfolio-single {
-        height: 300px;
+        height: auto; /* Allow height to fit content */
+        background: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .wpo-protfolio-single::after {
+        display: none; /* Remove overlay on mobile */
+    }
+
+    .wpo-protfolio-img {
+        height: 250px;
+        position: relative;
+    }
+
+    .wpo-protfolio-text {
+        position: relative;
+        bottom: 0;
+        padding: 1.5rem;
+        background: #ffffff;
+        color: var(--text-dark);
+        opacity: 1;
+        transform: none;
+        text-align: left; /* Better for reading on mobile */
+    }
+
+    .wpo-protfolio-text h3 {
+        color: var(--accent-blue);
+        font-size: 1.3rem;
+    }
+
+    .wpo-protfolio-text p {
+        opacity: 1;
+        transform: none;
+        color: var(--text-muted);
+        margin-bottom: 1.2rem;
+    }
+
+    .wpo-protfolio-text .btn-link {
+        opacity: 1;
+        transform: none;
+        color: var(--accent-blue);
+        border-color: var(--accent-blue);
+        background: transparent;
+    }
+
+    .wpo-protfolio-text .alliance-badge {
+        opacity: 1;
+        transform: none;
+        background: var(--surface-color);
+        margin-bottom: 1rem;
     }
 
     .carousel-track .logo-card {
