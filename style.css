@@ -874,8 +874,8 @@ p {
     position: relative;
     overflow: hidden;
     border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* Sombra de card más pronunciada */
-    height: 520px; /* Aumentado nuevamente para dar espacio al texto más grande */
+    box-shadow: 0 15px 45px rgba(0,0,0,0.12); /* Sombra más profunda */
+    height: 600px; /* Aumentado a 600px para una presencia masiva */
     background: var(--surface-color);
 }
 
@@ -930,22 +930,22 @@ p {
 }
 
 .wpo-protfolio-text h3 {
-    font-size: 2.2rem; /* Aumentado sustancialmente para mayor impacto */
+    font-size: 2.6rem; /* Aumento masivo de título */
     color: #ffffff;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     transition: 0.5s ease;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para legibilidad */
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
 }
 
 .wpo-protfolio-text p {
-    font-size: 1.1rem; /* Aumentado para equilibrar con el título más grande */
-    color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 1.5rem;
+    font-size: 1.2rem; /* Texto más grande */
+    color: rgba(255, 255, 255, 1); /* Blanco puro para contraste */
+    margin-bottom: 2rem;
     line-height: 1.6;
     opacity: 1; /* Visible por defecto */
     transform: translateY(0);
     transition: 0.5s ease;
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); /* Sombra para legibilidad */
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
 }
 
 .wpo-protfolio-text .btn-link {
@@ -1532,7 +1532,7 @@ p {
     }
 
     .wpo-protfolio-img {
-        height: 250px;
+        height: 320px; /* Imagen más grande en móvil */
         position: relative;
     }
 
@@ -1549,14 +1549,17 @@ p {
 
     .wpo-protfolio-text h3 {
         color: var(--accent-blue);
-        font-size: 1.8rem; /* Ajustado para móvil */
+        font-size: 2.1rem; /* Título más grande en móvil */
+        text-shadow: none; /* Sin sombra en móvil sobre fondo blanco */
     }
 
     .wpo-protfolio-text p {
         opacity: 1;
         transform: none;
         color: var(--text-muted);
-        margin-bottom: 1.2rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.15rem; /* Texto más grande en móvil */
+        text-shadow: none; /* Sin sombra en móvil sobre fondo blanco */
     }
 
     .wpo-protfolio-text .btn-link {

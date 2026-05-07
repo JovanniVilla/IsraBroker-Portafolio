@@ -17,6 +17,8 @@ Thumbs.db
 # Dependencies
 node_modules/
 package-lock.json
+respaldo
+
 
 # Environment variables
 .env
